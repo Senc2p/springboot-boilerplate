@@ -1,0 +1,6 @@
+#Configuration for database
+spring:
+  application:
+    name: springboot-boilerplate
+  main:
+    banner-mode: off
