@@ -17,9 +17,9 @@ public class BookServiceTest {
         List<Books> list = books.getBooks();
 
         assertNotNull(list);
-        assertEquals(2, list.size());
+        assertEquals(3, list.size());
 
-         assertEquals(1L,list.get(0).getId());
-         assertEquals(2L,list.get(1).getId());
+         assertEquals(10L,list.get(0).getId());
+         assertEquals(15L,list.get(1).getId());
     }
 }

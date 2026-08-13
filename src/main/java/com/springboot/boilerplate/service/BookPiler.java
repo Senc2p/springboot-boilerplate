@@ -7,10 +7,10 @@ import java.util.List;
 @Service
 public class BookPiler {
 
-    public static List<Books> getBooks() {
-        return List.of(
-                new Books(1L, "Bulan", "Tere Lise"),
-                new Books(2L, "Matahari", "Tere Lise")
+    public List<Books> getBooks() {
+        return List.of(new Books(10L,"Guardian of talons and snares","Anastasis Blythe"),
+                new Books(15L,"The price of safety","Micahael C. Bland"),
+                new Books(20L,"Our perfect murder","Camille Cabrera")
         );
     }
 }
