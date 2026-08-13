@@ -3,9 +3,7 @@ package com.springboot.boilerplate.controller;
 import com.springboot.boilerplate.model.Books;
 import com.springboot.boilerplate.service.BookPiler;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +26,10 @@ public class BookEndpoint {
         return bookPiler.getBooks();
     }
 
+    @PostMapping("/addBook")
+    public Books addBook(@RequestBody Books newBook){
+        return bookPiler.addBook(newBook);
+    };
 }
 
 record Book (String name, String author){}

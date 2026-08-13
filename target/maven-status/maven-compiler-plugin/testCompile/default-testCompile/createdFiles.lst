@@ -1,3 +1,4 @@
 com\springboot\boilerplate\BoilerplateApplicationTests.class
-com\springboot\boilerplate\test\controller\BookControllerTest.class
 com\springboot\boilerplate\test\service\BookServiceTest.class
+com\springboot\boilerplate\test\controller\BookControllerTest.class
+com\springboot\boilerplate\test\service\AddingBookTest.class
