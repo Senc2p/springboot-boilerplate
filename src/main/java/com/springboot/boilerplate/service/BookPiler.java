@@ -1,25 +1,26 @@
 package com.springboot.boilerplate.service;
 
 import com.springboot.boilerplate.model.Books;
+import com.springboot.boilerplate.repository.BookRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class BookPiler {
 
-    private List<Books> books = new ArrayList<>(List.of(
-            new Books(10L, "Guardian of talons and snares", "Anastasis Blythe"),
-            new Books(15L, "The price of safety", "Micahael C. Bland"),
-            new Books(20L, "Our perfect murder", "Camille Cabrera")
-    ));
+    private final BookRepository bookRepository;
+
+    public BookPiler(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     public List<Books> getBooks() {
-        return books;
+        return bookRepository.findAll();
     }
 
     public Books addBook(Books newBook) {
-        books.add(newBook);
-        return newBook;
+        return bookRepository.save(newBook);
     }
 }

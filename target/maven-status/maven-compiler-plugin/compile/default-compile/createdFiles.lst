@@ -1,0 +1,5 @@
+com\springboot\boilerplate\model\Books.class
+com\springboot\boilerplate\BoilerplateApplication.class
+com\springboot\boilerplate\service\BookPiler.class
+com\springboot\boilerplate\controller\BookEndpoint.class
+com\springboot\boilerplate\repository\BookRepository.class

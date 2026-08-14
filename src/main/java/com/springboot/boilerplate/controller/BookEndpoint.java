@@ -12,24 +12,15 @@ import java.util.List;
 @RequestMapping("/api")
 public class BookEndpoint {
 
-    private final BookPiler bookPiler = new BookPiler();
+    private final BookPiler bookPiler;
 
     @GetMapping("/books")
-    public List<Books> getFixedBooks(){
-        return List.of(new Books(10L,"Guardian of talons and snares","Anastasis Blythe"),
-            new Books(15L,"The price of safety","Micahael C. Bland"),
-            new Books(20L,"Our perfect murder","Camille Cabrera"));
-    }
-
-    @GetMapping("/seeBooks")
-    public List<Books> getBooks(){
+    public List<Books> getBooks() {
         return bookPiler.getBooks();
     }
 
     @PostMapping("/addBook")
-    public Books addBook(@RequestBody Books newBook){
+    public Books addBook(@RequestBody Books newBook) {
         return bookPiler.addBook(newBook);
-    };
+    }
 }
-
-record Book (String name, String author){}

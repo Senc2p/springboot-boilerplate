@@ -29,12 +29,10 @@ public class AddingBookTest {
     @MockBean
     private BookPiler bookPiler;
 
-    private final BookPiler books = new BookPiler();
-
     @Test
     void shouldAddNewBook() throws Exception {
         Books newBook = new Books(
-                25L,
+                4L,
                 "The Good, The Bad, The Ugly",
                 "Naruto Uzumaki"
         );
@@ -45,13 +43,13 @@ public class AddingBookTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                 {
-                    "id": 25,
+                    "id": 4,
                     "name": "The Good, The Bad, The Ugly",
                     "author": "Naruto Uzumaki"
                 }
                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(25))
+                .andExpect(jsonPath("$.id").value(4))
                 .andExpect(jsonPath("$.name").value("The Good, The Bad, The Ugly"))
                 .andExpect(jsonPath("$.author").value("Naruto Uzumaki"));
     }
